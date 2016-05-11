@@ -22,9 +22,12 @@ class ColorViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet var colorPickerView: UIPickerView!
     
+    let cPVDS = ColorPickerViewDataSource()
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         colorPickerView.delegate = self
+        colorPickerView.dataSource = cPVDS
         
     }
     
@@ -33,7 +36,7 @@ class ColorViewController: UIViewController, UIPickerViewDelegate {
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let cPVDS = ColorPickerViewDataSource()
+      
         return cPVDS.colorOptions[row]
     }
     
@@ -78,6 +81,9 @@ class ColorViewController: UIViewController, UIPickerViewDelegate {
             
         }
         if row == 13{
+            
+        }
+        if row == 14{
             
         }
     }
