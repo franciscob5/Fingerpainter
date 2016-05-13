@@ -19,4 +19,5 @@ class ColorPickerViewDataSource: NSObject, UIPickerViewDataSource {
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return colorOptions.count
     }
+    
 }

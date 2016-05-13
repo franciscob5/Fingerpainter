@@ -42,6 +42,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aqv-mV-Tn1"/>
                     <connections>
                         <outlet property="canvas" destination="B4D-HY-cqc" id="Aog-XN-fkv"/>
                     </connections>
@@ -50,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="162" y="343"/>
         </scene>
-        <!--Item-->
+        <!--ColorViewController-->
         <scene sceneID="QoZ-nX-Qda">
             <objects>
-                <viewController id="Y8k-xU-4gu" customClass="ColorViewController" customModule="Fingerpainter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ColorViewController" id="Y8k-xU-4gu" customClass="ColorViewController" customModule="Fingerpainter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gR7-3V-Zim"/>
                         <viewControllerLayoutGuide type="bottom" id="PdQ-xp-PCg"/>
@@ -113,16 +114,19 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1PD-eB-NCi">
                                 <rect key="frame" x="28" y="295" width="265" height="162"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-7B-wBG">
-                                <rect key="frame" x="0.0" y="494" width="46" height="30"/>
-                                <state key="normal" title="&lt;----"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Presets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-RP-HZU">
                                 <rect key="frame" x="107" y="236" width="107" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-7B-wBG">
+                                <rect key="frame" x="7" y="486" width="46" height="30"/>
+                                <state key="normal" title="&lt;----"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="VWJ-i2-g2G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -145,7 +149,7 @@
         <!--Item-->
         <scene sceneID="Mbv-Uk-CeR">
             <objects>
-                <viewController id="44S-8B-RxK" sceneMemberID="viewController">
+                <viewController id="44S-8B-RxK" customClass="InfoViewController" customModule="Fingerpainter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wel-Rw-xvw"/>
                         <viewControllerLayoutGuide type="bottom" id="1Dp-cP-xuA"/>
@@ -153,6 +157,31 @@
                     <view key="view" contentMode="scaleToFill" id="7BA-hG-ZPK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abn-tg-ikK">
+                                <rect key="frame" x="0.0" y="28" width="320" height="395"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-Cf-QXj">
+                                <rect key="frame" x="20" y="457" width="280" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cat Facts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5U-pI-m8T">
+                                <rect key="frame" x="124" y="428" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P44-BG-bJv">
+                                <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                <state key="normal" title="&lt;------"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="7hV-Zh-lY5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="keb-fP-RG7"/>
@@ -164,7 +193,7 @@
         <!--Item-->
         <scene sceneID="qtJ-MM-E1Q">
             <objects>
-                <viewController id="n5d-ma-x7C" sceneMemberID="viewController">
+                <viewController id="n5d-ma-x7C" customClass="TestViewController" customModule="Fingerpainter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v0g-os-o0h"/>
                         <viewControllerLayoutGuide type="bottom" id="DQZ-af-G5r"/>
@@ -172,9 +201,31 @@
                     <view key="view" contentMode="scaleToFill" id="pVR-tU-b29">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSO-iw-EyL">
+                                <rect key="frame" x="0.0" y="67" width="320" height="452"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJo-bs-AiY">
+                                <rect key="frame" x="7" y="28" width="61" height="30"/>
+                                <state key="normal" title="&lt;------"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="CeS-Rf-CFI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gS-59-ber">
+                                <rect key="frame" x="170" y="28" width="88" height="30"/>
+                                <state key="normal" title="Clear Screen"/>
+                                <connections>
+                                    <action selector="clear:" destination="n5d-ma-x7C" eventType="touchUpInside" id="tx2-4F-iFg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="PJe-WA-nvK"/>
+                    <connections>
+                        <outlet property="Canvas" destination="YSO-iw-EyL" id="kEE-G1-I1w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifg-jm-sr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,7 +255,7 @@
         <!--Item-->
         <scene sceneID="Ddg-4Q-Xvc">
             <objects>
-                <viewController id="Bj9-mH-3v8" sceneMemberID="viewController">
+                <viewController id="Bj9-mH-3v8" customClass="LineSizeViewController" customModule="Fingerpainter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uB1-eo-Qm4"/>
                         <viewControllerLayoutGuide type="bottom" id="S6n-GZ-aql"/>
@@ -212,6 +263,33 @@
                     <view key="view" contentMode="scaleToFill" id="pyE-ej-NKY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kN7-aV-YXy">
+                                <rect key="frame" x="27" y="101" width="266" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line Width" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck4-fX-YL2">
+                                <rect key="frame" x="118" y="42" width="85" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiU-mQ-Li5">
+                                <rect key="frame" x="146" y="162" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNp-sH-jNI">
+                                <rect key="frame" x="40" y="228" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iy0-2r-Eig">
+                                <rect key="frame" x="20" y="467" width="51" height="30"/>
+                                <state key="normal" title="&lt;------"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="1Yg-9R-iyQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="WDN-RA-FIC"/>
@@ -221,4 +299,7 @@
             <point key="canvasLocation" x="1092" y="-83"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CeS-Rf-CFI"/>
+    </inferredMetricsTieBreakers>
 </document>

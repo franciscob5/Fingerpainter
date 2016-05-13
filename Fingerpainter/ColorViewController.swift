@@ -34,6 +34,10 @@ class ColorViewController: UIViewController, UIPickerViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+    }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
       
@@ -88,4 +92,5 @@ class ColorViewController: UIViewController, UIPickerViewDelegate {
         }
     }
 
+    
 }
