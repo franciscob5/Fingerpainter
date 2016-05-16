@@ -15,6 +15,7 @@
 		7566926A1CE4E28A00DAB8AF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756692691CE4E28A00DAB8AF /* TestViewController.swift */; };
 		7566926C1CE4EB1600DAB8AF /* LineSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566926B1CE4EB1600DAB8AF /* LineSizeViewController.swift */; };
 		7566926E1CE4F8C600DAB8AF /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566926D1CE4F8C600DAB8AF /* InfoViewController.swift */; };
+		757A6E8B1CE6372600329788 /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A6E8A1CE6372600329788 /* LineData.swift */; };
 		75D899501C49610200F7690D /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8994F1C49610200F7690D /* ColorViewController.swift */; };
 		75D899521C49674400F7690D /* ColorPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D899511C49674400F7690D /* ColorPickerDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		756692691CE4E28A00DAB8AF /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		7566926B1CE4EB1600DAB8AF /* LineSizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSizeViewController.swift; sourceTree = "<group>"; };
 		7566926D1CE4F8C600DAB8AF /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		757A6E8A1CE6372600329788 /* LineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineData.swift; sourceTree = "<group>"; };
 		75D8994F1C49610200F7690D /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		75D899511C49674400F7690D /* ColorPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 			children = (
 				754A46021C45B00400A8E053 /* AppDelegate.swift */,
 				754A46041C45B00400A8E053 /* ViewController.swift */,
+				757A6E8A1CE6372600329788 /* LineData.swift */,
 				754A46061C45B00400A8E053 /* Main.storyboard */,
 				7566926D1CE4F8C600DAB8AF /* InfoViewController.swift */,
 				7566926B1CE4EB1600DAB8AF /* LineSizeViewController.swift */,
@@ -152,6 +155,7 @@
 				7566926A1CE4E28A00DAB8AF /* TestViewController.swift in Sources */,
 				754A46051C45B00400A8E053 /* ViewController.swift in Sources */,
 				75D899501C49610200F7690D /* ColorViewController.swift in Sources */,
+				757A6E8B1CE6372600329788 /* LineData.swift in Sources */,
 				7566926E1CE4F8C600DAB8AF /* InfoViewController.swift in Sources */,
 				75D899521C49674400F7690D /* ColorPickerDataSource.swift in Sources */,
 				754A46031C45B00400A8E053 /* AppDelegate.swift in Sources */,

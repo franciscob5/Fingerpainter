@@ -23,6 +23,10 @@ class ViewController: UIViewController {
         UIImageWriteToSavedPhotosAlbum(canvas.image!, nil, nil, nil)
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()

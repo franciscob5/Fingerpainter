@@ -24,6 +24,10 @@ class ColorViewController: UIViewController, UIPickerViewDelegate {
     
     let cPVDS = ColorPickerViewDataSource()
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         colorPickerView.delegate = self

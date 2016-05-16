@@ -45,6 +45,10 @@ class TestViewController: UIViewController {
         //print message with breakpoint here
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     func drawFromPoint(start: CGPoint, toPoint end : CGPoint){
         UIGraphicsBeginImageContext(canvas.frame.size)
         let context = UIGraphicsGetCurrentContext()
