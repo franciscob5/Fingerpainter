@@ -9,9 +9,15 @@
 import UIKit
 
 class TestViewController: UIViewController {
+    
+    var parentTab : TabBarController!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        parentTab = self.tabBarController as! TabBarController
+
 
         // Do any additional setup after loading the view.
     }
@@ -26,7 +32,6 @@ class TestViewController: UIViewController {
     }
     @IBOutlet var canvas: UIImageView!
     var start: CGPoint?
-    var color : UIColor = UIColor.blackColor()
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first as UITouch!
@@ -53,8 +58,8 @@ class TestViewController: UIViewController {
         UIGraphicsBeginImageContext(canvas.frame.size)
         let context = UIGraphicsGetCurrentContext()
         canvas.image?.drawInRect(CGRect(x: 0, y: 0, width: canvas.frame.size.width, height: canvas.frame.size.height))
-        CGContextSetLineWidth(context, 5)
-        CGContextSetStrokeColorWithColor(context, color.CGColor)
+        CGContextSetLineWidth(context, CGFloat(parentTab.lineWidth))
+        CGContextSetStrokeColorWithColor(context, parentTab.lineColor.CGColor)
         CGContextBeginPath(context)
         CGContextMoveToPoint(context, start.x, start.y)
         CGContextAddLineToPoint(context, end.x, end.y)
@@ -62,6 +67,14 @@ class TestViewController: UIViewController {
         let newimage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         canvas.image = newimage
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let viewController: ViewController = segue.destinationViewController as! ViewController
+        viewController.lineData.lineColor = parentTab.lineColor
+        viewController.lineData.lineWidth = parentTab.lineWidth
+viewController.storedImage = parentTab.imageStorage
+         viewController.reverseRevision = parentTab.undoStorage!
     }
 
 

@@ -32,6 +32,21 @@
                                             <action selector="saveToPhotoAlbum:" destination="BYZ-38-t0r" id="9dN-oo-yiO"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="organize" id="Z1p-wU-Xam">
+                                        <connections>
+                                            <action selector="pictureLoad:" destination="BYZ-38-t0r" id="uA1-ch-s6J"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="undo" id="gaX-1g-JuN">
+                                        <connections>
+                                            <action selector="undoPressed:" destination="BYZ-38-t0r" id="yFQ-Xy-I0P"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="redo" id="DXH-Gg-NOs">
+                                        <connections>
+                                            <action selector="redoPressed:" destination="BYZ-38-t0r" id="qxl-vg-4Lx"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="More" id="YNK-jz-plO">
                                         <connections>
                                             <segue destination="vVo-vc-zeI" kind="modal" id="R2d-S3-eLh"/>
@@ -45,11 +60,14 @@
                     <navigationItem key="navigationItem" id="aqv-mV-Tn1"/>
                     <connections>
                         <outlet property="canvas" destination="B4D-HY-cqc" id="Aog-XN-fkv"/>
+                        <outlet property="moreButton" destination="YNK-jz-plO" id="Zvr-TJ-V3h"/>
+                        <outlet property="redoButton" destination="DXH-Gg-NOs" id="LMz-Cj-lKc"/>
+                        <outlet property="undoButton" destination="gaX-1g-JuN" id="7Mj-Z9-K5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="343"/>
+            <point key="canvasLocation" x="110" y="55"/>
         </scene>
         <!--ColorViewController-->
         <scene sceneID="QoZ-nX-Qda">
@@ -68,12 +86,21 @@
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mdG-Cm-gFF">
                                 <rect key="frame" x="71" y="48" width="202" height="31"/>
+                                <connections>
+                                    <action selector="redSliderMoved:" destination="Y8k-xU-4gu" eventType="valueChanged" id="ikq-3D-ZJc"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qug-6w-wg0">
                                 <rect key="frame" x="71" y="102" width="202" height="31"/>
+                                <connections>
+                                    <action selector="greenSliderMoved:" destination="Y8k-xU-4gu" eventType="valueChanged" id="Gcx-k0-ef8"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bwH-Bd-1yb">
                                 <rect key="frame" x="71" y="163" width="202" height="31"/>
+                                <connections>
+                                    <action selector="blueSliderMoved:" destination="Y8k-xU-4gu" eventType="valueChanged" id="YSg-E0-RzM"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m67-Qh-gVl">
                                 <rect key="frame" x="279" y="166" width="31" height="21"/>
@@ -112,14 +139,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1PD-eB-NCi">
-                                <rect key="frame" x="28" y="295" width="265" height="162"/>
+                                <rect key="frame" x="28" y="306" width="265" height="162"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Presets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-RP-HZU">
-                                <rect key="frame" x="107" y="236" width="107" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-7B-wBG">
                                 <rect key="frame" x="7" y="486" width="46" height="30"/>
                                 <state key="normal" title="&lt;----"/>
@@ -127,6 +148,24 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" id="VWJ-i2-g2G"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jte-mZ-n9f">
+                                <rect key="frame" x="113" y="201" width="118" height="31"/>
+                                <connections>
+                                    <action selector="alphaSlider:" destination="Y8k-xU-4gu" eventType="valueChanged" id="hSt-Ba-3Hr"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4te-ps-O93">
+                                <rect key="frame" x="58" y="205" width="41" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Presets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-RP-HZU">
+                                <rect key="frame" x="107" y="255" width="107" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -135,16 +174,17 @@
                     <navigationItem key="navigationItem" id="vlB-AV-oaC"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="BlueSlider" destination="bwH-Bd-1yb" id="Vq6-td-vVg"/>
+                        <outlet property="BlueSlider" destination="bwH-Bd-1yb" id="cLx-QC-OMN"/>
+                        <outlet property="alphaSlider" destination="Jte-mZ-n9f" id="71E-F7-XZv"/>
                         <outlet property="colorDemo" destination="PH8-Nh-7tl" id="WqP-1B-WyE"/>
                         <outlet property="colorPickerView" destination="1PD-eB-NCi" id="6RZ-Wl-sIZ"/>
-                        <outlet property="greenSlider" destination="Qug-6w-wg0" id="GCW-km-aBT"/>
-                        <outlet property="redSlider" destination="mdG-Cm-gFF" id="sx5-ca-OmY"/>
+                        <outlet property="greenSlider" destination="Qug-6w-wg0" id="flP-fD-M9D"/>
+                        <outlet property="redSlider" destination="mdG-Cm-gFF" id="Uuf-qA-Ozi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Vg-dQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="343"/>
+            <point key="canvasLocation" x="1368" y="99"/>
         </scene>
         <!--Item-->
         <scene sceneID="Mbv-Uk-CeR">
@@ -162,12 +202,6 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="395"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-Cf-QXj">
-                                <rect key="frame" x="20" y="457" width="280" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cat Facts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5U-pI-m8T">
                                 <rect key="frame" x="124" y="428" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -181,14 +215,24 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" id="7hV-Zh-lY5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-Cf-QXj">
+                                <rect key="frame" x="5" y="446" width="315" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="keb-fP-RG7"/>
+                    <connections>
+                        <outlet property="catLabel" destination="K9i-Cf-QXj" id="W3p-fz-Lv2"/>
+                        <outlet property="mainWebView" destination="abn-tg-ikK" id="1oG-RA-Guz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1D-WA-Edb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="1102"/>
+            <point key="canvasLocation" x="596" y="988"/>
         </scene>
         <!--Item-->
         <scene sceneID="qtJ-MM-E1Q">
@@ -229,12 +273,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifg-jm-sr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="776"/>
+            <point key="canvasLocation" x="58" y="978"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xvr-74-Vd8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vVo-vc-zeI" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vVo-vc-zeI" customClass="TabBarController" customModule="Fingerpainter" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jJG-bF-ND1"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xpG-IQ-95Q">
@@ -250,7 +294,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnI-Sb-cIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="554" y="343"/>
+            <point key="canvasLocation" x="732" y="85"/>
         </scene>
         <!--Item-->
         <scene sceneID="Ddg-4Q-Xvc">
@@ -266,6 +310,9 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kN7-aV-YXy">
                                 <rect key="frame" x="27" y="101" width="266" height="31"/>
+                                <connections>
+                                    <action selector="lineWidthChanged:" destination="Bj9-mH-3v8" eventType="valueChanged" id="vj2-JD-vcB"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line Width" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck4-fX-YL2">
                                 <rect key="frame" x="118" y="42" width="85" height="34"/>
@@ -293,13 +340,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="WDN-RA-FIC"/>
+                    <connections>
+                        <outlet property="imgView" destination="eNp-sH-jNI" id="Xfj-RP-btF"/>
+                        <outlet property="lineW" destination="LiU-mQ-Li5" id="Hqh-GH-40a"/>
+                        <outlet property="slider" destination="kN7-aV-YXy" id="lO5-hs-X2P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeB-Re-dXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="-83"/>
+            <point key="canvasLocation" x="1074" y="988"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CeS-Rf-CFI"/>
+        <segue reference="VWJ-i2-g2G"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,20 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7507614C1CEE357F00B57D3B /* imgres.png in Resources */ = {isa = PBXBuildFile; fileRef = 7507614B1CEE357F00B57D3B /* imgres.png */; };
+		7523E2EC1CECDD86006B1289 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523E2EB1CECDD86006B1289 /* TabBarController.swift */; };
 		754A46031C45B00400A8E053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A46021C45B00400A8E053 /* AppDelegate.swift */; };
 		754A46051C45B00400A8E053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A46041C45B00400A8E053 /* ViewController.swift */; };
-		754A46081C45B00400A8E053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754A46061C45B00400A8E053 /* Main.storyboard */; };
+		754A46081C45B00400A8E053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754A46061C45B00400A8E053 /* Main.storyboard */; settings = {ASSET_TAGS = (dank, ); }; };
 		754A460A1C45B00400A8E053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754A46091C45B00400A8E053 /* Assets.xcassets */; };
 		754A460D1C45B00400A8E053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754A460B1C45B00400A8E053 /* LaunchScreen.storyboard */; };
 		7566926A1CE4E28A00DAB8AF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756692691CE4E28A00DAB8AF /* TestViewController.swift */; };
 		7566926C1CE4EB1600DAB8AF /* LineSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566926B1CE4EB1600DAB8AF /* LineSizeViewController.swift */; };
 		7566926E1CE4F8C600DAB8AF /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566926D1CE4F8C600DAB8AF /* InfoViewController.swift */; };
 		757A6E8B1CE6372600329788 /* LineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757A6E8A1CE6372600329788 /* LineData.swift */; };
+		75A6B73A1CEB81EE002E544D /* fingerPainter.html in Resources */ = {isa = PBXBuildFile; fileRef = 75A6B7391CEB81EE002E544D /* fingerPainter.html */; };
 		75D899501C49610200F7690D /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8994F1C49610200F7690D /* ColorViewController.swift */; };
 		75D899521C49674400F7690D /* ColorPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D899511C49674400F7690D /* ColorPickerDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7507614B1CEE357F00B57D3B /* imgres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgres.png; sourceTree = "<group>"; };
+		7523E2EB1CECDD86006B1289 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		754A45FF1C45B00400A8E053 /* Fingerpainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fingerpainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754A46021C45B00400A8E053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754A46041C45B00400A8E053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		7566926B1CE4EB1600DAB8AF /* LineSizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSizeViewController.swift; sourceTree = "<group>"; };
 		7566926D1CE4F8C600DAB8AF /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		757A6E8A1CE6372600329788 /* LineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineData.swift; sourceTree = "<group>"; };
+		75A6B7391CEB81EE002E544D /* fingerPainter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = fingerPainter.html; sourceTree = "<group>"; };
 		75D8994F1C49610200F7690D /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		75D899511C49674400F7690D /* ColorPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,8 +72,10 @@
 		754A46011C45B00400A8E053 /* Fingerpainter */ = {
 			isa = PBXGroup;
 			children = (
+				7507614B1CEE357F00B57D3B /* imgres.png */,
 				754A46021C45B00400A8E053 /* AppDelegate.swift */,
 				754A46041C45B00400A8E053 /* ViewController.swift */,
+				7523E2EB1CECDD86006B1289 /* TabBarController.swift */,
 				757A6E8A1CE6372600329788 /* LineData.swift */,
 				754A46061C45B00400A8E053 /* Main.storyboard */,
 				7566926D1CE4F8C600DAB8AF /* InfoViewController.swift */,
@@ -75,6 +83,7 @@
 				756692691CE4E28A00DAB8AF /* TestViewController.swift */,
 				75D899511C49674400F7690D /* ColorPickerDataSource.swift */,
 				75D8994F1C49610200F7690D /* ColorViewController.swift */,
+				75A6B7391CEB81EE002E544D /* fingerPainter.html */,
 				754A46091C45B00400A8E053 /* Assets.xcassets */,
 				754A460B1C45B00400A8E053 /* LaunchScreen.storyboard */,
 				754A460E1C45B00400A8E053 /* Info.plist */,
@@ -108,6 +117,9 @@
 		754A45F71C45B00300A8E053 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					dank,
+				);
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = com.sbhscs.Mobile;
 				TargetAttributes = {
@@ -140,8 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				754A460D1C45B00400A8E053 /* LaunchScreen.storyboard in Resources */,
+				7507614C1CEE357F00B57D3B /* imgres.png in Resources */,
 				754A460A1C45B00400A8E053 /* Assets.xcassets in Resources */,
 				754A46081C45B00400A8E053 /* Main.storyboard in Resources */,
+				75A6B73A1CEB81EE002E544D /* fingerPainter.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +169,7 @@
 				7566926A1CE4E28A00DAB8AF /* TestViewController.swift in Sources */,
 				754A46051C45B00400A8E053 /* ViewController.swift in Sources */,
 				75D899501C49610200F7690D /* ColorViewController.swift in Sources */,
+				7523E2EC1CECDD86006B1289 /* TabBarController.swift in Sources */,
 				757A6E8B1CE6372600329788 /* LineData.swift in Sources */,
 				7566926E1CE4F8C600DAB8AF /* InfoViewController.swift in Sources */,
 				75D899521C49674400F7690D /* ColorPickerDataSource.swift in Sources */,

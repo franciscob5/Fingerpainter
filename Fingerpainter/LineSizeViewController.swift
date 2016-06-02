@@ -10,8 +10,25 @@ import UIKit
 
 class LineSizeViewController: UIViewController {
 
+    
+    @IBOutlet var slider: UISlider!
+    @IBOutlet var lineW: UILabel!
+    @IBOutlet var imgView: UIImageView!
+    var parentTab : TabBarController!
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgView.image = UIImage(named: "imgres.png")
+        parentTab = self.tabBarController as! TabBarController
+        slider.value = Float(parentTab.lineWidth / 100)
+        lineW.text = "\(Int(slider.value * 100))"
+        imgView.frame.size.height = CGFloat(slider.value / 100)
+      
+        
+
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +41,28 @@ class LineSizeViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    @IBAction func lineWidthChanged(sender: UISlider) {
+        let num: Int! = Int(slider.value * 100)
+        print(num)
+        lineW.text = "\(num)"
+        imgView.frame.size.height = CGFloat(num)
+        //imgView.image?.size.height = CGFloat(num)
+        parentTab.lineWidth = num
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let viewController: ViewController = segue.destinationViewController as! ViewController
+        viewController.lineData.lineColor = parentTab.lineColor
+        viewController.lineData.lineWidth = parentTab.lineWidth
+viewController.storedImage = parentTab.imageStorage
+     viewController.reverseRevision = parentTab.undoStorage!
+    }
+    
+    
+    
+    
 
     /*
     // MARK: - Navigation
